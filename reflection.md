@@ -1,8 +1,8 @@
 Use this file to record your reflection on this assignment.
 
 - Which classmates did you consult with while working on this assignment? Hadya Abdi, Meron Oumer.
-- Which session(s) of TA / office hours did you attend? I attended the office hours held during our Friday class on the 14th of May. 
-- What are your initial impressions of Java? Java can get tricky because it has quite a lot of keywords. Additionally, since Java is case sensitive, it makes it even more complicated to work with. 
+- Which session(s) of TA / office hours did you attend? I attended the office hours held during our Friday class on the 14th of Feb. 
+- What are your initial impressions of Java? Java can get tricky because it has quite a lot of keywords. 
 - Can you draw any conclusion about programming in general from the similarities or the differences between the two languages? Python is easier to understand and to work with compared to Java. 
 - What worked, what didn't, what advice would you give someone taking this course in the future?
 Not all the mirror words worked as I expected them to and I couldn't figure out how to solve the issue. For the pair, " are, am" when the user input " They are", the reflection becomes " They am" which is not what we intend to return. However, that works perfectly when the input has the subject " you" instead of "they". Also, this assignment was really challenging as I have never used the mirroring function in my life and also the split(). It get more challenging as you try to make it make sense. The program was manageable when I only had to make the bot return only one phrase, however making it mirror the user's input was the real challenge. 

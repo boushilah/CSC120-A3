@@ -12,7 +12,6 @@ class Conversation implements Chatbot {
     "Interesting, tell me more.",
     "Why do you think that?"
 };
-// Mirror words mapping
 private static final String[][] mirrorWords = {
     {"I", "you"}, {"me", "you"}, {"my", "your"}, {"your", "my"},
     {"you", "I"}, {"am", "are"}, {"are", "am"}
@@ -37,9 +36,9 @@ private static final String[][] mirrorWords = {
     System.out.println("Tell me about what's on your mind today.");
     String userResponse,botResponse;
     for(int i=0;i<n;i++){
-      System.out.print("you: ");
+      System.out.print(name +": ");
       userResponse = input.nextLine();
-      transcript[2 * i] = "you: " + userResponse;
+      transcript[2 * i] = name+": " + userResponse;
       botResponse = respond(userResponse);
       transcript[2 * i + 1] = "Bot: " + botResponse;
       System.out.println("Bot: " + botResponse);
@@ -64,31 +63,28 @@ private static final String[][] mirrorWords = {
    * @return mirrored or canned response to user input  
    */
   public String respond(String inputString) {
-    String[] words = inputString.split("\\s+"); // Split input words into phrases ie. "I am cold" to "I","am","cold".
+    String[] words = inputString.split("\\s+"); 
     boolean hasMirrorWords = false;
-    // For loop for checking and replacing mirror words
+    
     for (int i = 0; i < words.length; i++) {
       for (String[] pair : mirrorWords) {
         if (words[i].equalsIgnoreCase(pair[0])) {
-          words[i] = pair[1]; // Replace with mirrored word
+          words[i] = pair[1]; 
           hasMirrorWords = true;
           break;
         }
       }
     }
-    // If a mirror word is found, reconstruct the sentence
+   
     if (hasMirrorWords) {
       return String.join( " ", words);
     }
-
-    // Otherwise, return a random canned response
     Random rand = new Random();
     return cannedResponses[rand.nextInt(cannedResponses.length)];
   }
-  public static void main(String[] arguments) {
+  public static void main(String[] args) {
     Conversation myConversation = new Conversation();
     myConversation.chat();
     myConversation.printTranscript();
-
   }
 }
